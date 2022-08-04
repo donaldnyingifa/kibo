@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kibo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="topup">
+    <h1>Kibo Crypto Store</h1>
+    <div>
+      <div class="flex">
+        <p class="balance">Wallet Balance = $<span id="balance" /></p>
+        <p class="balance shop-balance">Kibo Store Balance = $<span id="shop-balance" /></p>
+      </div>
+      <p class="balance">Smart Coin Total = <span id="smartcoin" /></p>
+      <div class="flex">
+        <p class="coupon-text">Enter topup amount in USD</p>
+        <input id="topup" placeholder="Enter Amount" value="" onchange="handleTopUp(this.value)">
+      </div>
+      <br />
+      <div class="flex">
+        <p class="coupon-text">Add coupon code</p>
+        <input id="coupon" placeholder="Enter coupon" value="" onchange="handleCoupon(this.value)">
+      </div>
+      <p><i>Please do not forget to press </i><strong>Enter</strong><i> after typing</i> Amount or Coupon!</p>
+      <button onclick="handlePay()">Pay $<span id="pay" /></button>
+      <p id="message"></p>
+    </div>
+  </div>
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>
