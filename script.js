@@ -18,7 +18,7 @@ const handleCoupon = (text) => {
     message.innerText = "Please enter a valid amount!";
     clearMessage(2000);
   }
-  else if (text === 'kibo') {
+  else if (text === 'kibo' && applyCoupon) {
     const discount = Math.floor(totalBill / 10);
     totalBill -= discount;
     billToPay.innerText = totalBill;
@@ -59,13 +59,13 @@ const handlePay = () => {
     billToPay.innerText = 0;
     message.innerText = `You successfully converted $${totalBill} to Kibo Smart Coin :) `;
     totalBill = 0;
+    couponCode.value = "";
+    topup.value = "";
+    applyCoupon = true;
     clearMessage();
   }
 }
 
 const clearMessage = (time = 4000) => {
-  couponCode.value = "";
-  topup.value = "";
-  applyCoupon = true;
   setTimeout(() => message.innerText = '', time);
 }
